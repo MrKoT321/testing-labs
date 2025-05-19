@@ -1,0 +1,134 @@
+{
+  "port": 4545,
+  "protocol": "http",
+  "stubs": [
+    {
+      "predicates": [
+        {
+          "equals": {
+            "method": "GET",
+            "path": "/api/rates",
+            "query": {
+              "base": "USD"
+            }
+          }
+        }
+      ],
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "base": "USD",
+              "rates": {
+                "EUR": 0.92,
+                "GBP": 0.79,
+                "JPY": 155.34
+              },
+              "date": "2025-05-19"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "predicates": [
+        {
+          "equals": {
+            "method": "GET",
+            "path": "/api/rates",
+            "query": {
+              "base": "EUR"
+            }
+          }
+        }
+      ],
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "base": "EUR",
+              "rates": {
+                "USD": 1.09,
+                "GBP": 0.86,
+                "JPY": 168.50
+              },
+              "date": "2025-05-19"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "predicates": [
+        {
+          "equals": {
+            "method": "GET",
+            "path": "/api/rates",
+            "query": {
+              "base": "GBP"
+            }
+          }
+        }
+      ],
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "base": "GBP",
+              "rates": {
+                "USD": 1.27,
+                "EUR": 1.16,
+                "JPY": 196.30
+              },
+              "date": "2025-05-19"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "predicates": [
+        {
+          "equals": {
+            "method": "GET",
+            "path": "/api/rates",
+            "query": {
+              "base": "JPY"
+            }
+          }
+        }
+      ],
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "base": "JPY",
+              "rates": {
+                "USD": 0.0064,
+                "EUR": 0.0059,
+                "GBP": 0.0051
+              },
+              "date": "2025-05-19"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
